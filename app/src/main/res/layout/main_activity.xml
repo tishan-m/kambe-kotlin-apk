@@ -1,0 +1,108 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- App Bar (Toolbar) -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:title="My App"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    <!-- Fragment Container for Navigation -->
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/nav_graph" />
+
+    <!-- RecyclerView for Product List -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/productRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="332dp"
+        android:layout_marginTop="16dp"
+        android:layout_weight="1" />
+
+
+    <AutoCompleteTextView
+        android:id="@+id/productNameInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter product"
+        android:inputType="text"
+        android:completionThreshold="1" />
+
+    <!-- Quantity Input -->
+    <EditText
+        android:id="@+id/quantityInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="Quantity (grams/ml/number)"
+        android:inputType="numberDecimal" />
+
+
+    <!-- Unit Price Input -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/unitPriceInput"
+            android:layout_width="92dp"
+            android:layout_height="wrap_content"
+            android:hint="Unit Price"
+            android:inputType="numberDecimal" />
+
+        <TextView
+        android:id="@+id/subTotalPriceText"
+        android:layout_width="145dp"
+        android:layout_height="41dp"
+        android:layout_marginLeft="85dp"
+        android:text="Rs 0"
+        android:textSize="18dp"
+        android:textColor="#8B4513"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:background="@drawable/rounded_yellow_background" />
+    </LinearLayout>
+
+    <!-- Calculated Price Display -->
+
+    <!-- Add Product Button -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/addProductButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Add Product" />
+
+        <Button
+            android:id="@+id/lastTotalButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"
+            android:textSize="18dp"
+            android:text="Rs 0"
+            android:backgroundTint="@color/purple_200"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:background="@drawable/rounded_yellow_background" />
+    </LinearLayout>
+</LinearLayout>

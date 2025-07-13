@@ -1,0 +1,34 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Cash Input -->
+    <EditText
+        android:id="@+id/cashInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Cash"
+        android:inputType="numberDecimal"
+        android:padding="8dp" />
+
+    <!-- Balance Display -->
+    <TextView
+        android:id="@+id/balanceText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Balance: Rs 0"
+        android:textStyle="bold"
+        android:textSize="20sp" />
+
+    <!-- Proceed Order Button -->
+    <Button
+        android:id="@+id/proceedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Proceed Order"
+        android:enabled="false" />
+</LinearLayout>
